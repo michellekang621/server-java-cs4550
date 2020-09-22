@@ -6,16 +6,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="cs4550-f20-sever-java-jannunzi" />
+        <module name="cs4550-f20-sever-java-michellekang" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="cs4550-f20-sever-java-jannunzi" target="11" />
+      <module name="cs4550-f20-sever-java-michellekang" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="cs4550-f20-sever-java-jannunzi" options="-parameters" />
+      <module name="cs4550-f20-sever-java-michellekang" options="-parameters" />
     </option>
   </component>
 </project>

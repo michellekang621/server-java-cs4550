@@ -1,4 +1,4 @@
-package com.example.cs4550f20severjavajannunzi;
+package com.example.cs4550f20serverjavamichellekang;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

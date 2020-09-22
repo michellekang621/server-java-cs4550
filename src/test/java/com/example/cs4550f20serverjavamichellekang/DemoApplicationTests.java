@@ -1,4 +1,4 @@
-package com.example.cs4550f20severjavajannunzi;
+package com.example.cs4550f20serverjavamichellekang;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

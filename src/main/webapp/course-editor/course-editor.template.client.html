@@ -15,16 +15,16 @@
 <body>
 <div class="container">
     <h1>
-        <i class="fas fa-times" style="font-size:20px"></i>
-        <label style="font-size:30px; margin-left:20px">Course Title</label>
+        <i class="fas fa-times wbdv-course-editor wbdv-close" style="font-size:20px"></i>
+        <label class="wbdv-course-title" style="font-size:30px; margin-left:20px">Course Title</label>
     </h1>
 
     <div class="row">
-        <div class="col-4">
+        <div class="col-4 wbdv-module-list">
 
             <ul class="list-group">
-                <li class="list-group-item list-group-item-action active">Module 1 <a href="#"><i
-                        class="fas fa-times float-right"></i></a></li>
+                <li class="list-group-item list-group-item-action active wbdv-module-item wbdv-module-item-title">Module 1 <a href="#"><i
+                        class="fas fa-times float-right wbdv-module-item-delete-btn"></i></a></li>
                 <li class="list-group-item list-group-item-action">Module 2 <a href="#"><i
                         class="fas fa-times float-right"></i></a></li>
                 <li class="list-group-item list-group-item-action">Module 3 <a href="#"><i
@@ -36,14 +36,15 @@
                 <li class="list-group-item list-group-item-action">Module 6 <a href="#"><i
                         class="fas fa-times float-right"></i></a></li>
                 <a href="#">
-                    <li class="list-group-item list-group-item-action" style="background-color:lightgrey">Add New Module</li>
+                    <li class="list-group-item list-group-item-action wbdv-module-item-add-btn"
+                        style="background-color:lightgrey">Add New Module</li>
                 </a>
             </ul>
         </div>
         <div class="col-8">
 
 
-            <ul class="nav nav-tabs">
+            <ul class="nav nav-tabs wbdv-lesson-tabs">
                 <li class="nav-item">
                     <a href="#" class="nav-link active">Lesson 1</a>
                 </li>
@@ -62,7 +63,7 @@
                 <li class="nav-item">
                     <a href="#" class="nav-link">Lesson 1</a>
                 </li>
-                <li class="nav-item"  style="float:right">
+                <li class="nav-item wbdv-lesson-add-btn"  style="float:right">
                     <a href="#"><i class="fas fa-plus"></i></a>
                 </li>
 
@@ -71,8 +72,8 @@
 
             <br/>
 
-            <ul class="nav nav-pills">
-                <li class="nav-item">
+            <ul class="nav nav-pills wbdv-topic-pill-list">
+                <li class="nav-item wbdv-topic-pill">
                     <a href="#" class="nav-link active">Topic 1</a>
                 </li>
                 <li class="nav-item">
@@ -91,7 +92,7 @@
                     <a href="#" class="nav-link">Topic 1</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#"><i class="fas fa-plus"></i></a>
+                    <a href="#"><i class="fas fa-plus wbdv-topic-add-btn"></i></a>
                 </li>
 
             </ul>

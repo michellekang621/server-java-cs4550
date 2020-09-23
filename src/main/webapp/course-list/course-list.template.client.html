@@ -20,21 +20,21 @@
 <!--            <div class="form-row">-->
                 <div class="col">
                     <a href="#">
-                    <i class="fas fa-bars wbdv-color-white" style="margin-left:30px; margin-top:20px; font-size:30px"></i>
+                    <i class="fas fa-bars wbdv-color-white wbdv-field wbdv-hamburger" style="margin-left:30px; margin-top:20px; font-size:30px"></i>
                     </a>
                 </div>
-                <div class="col">
+                <div class="col wbdv-label wbdv-course-manager">
                     <label for="courseManager"
                            style="position:left; font-size:20px">Course Manager</label>
                 </div>
-                <div class="form-group col-8">
+                <div class="form-group col-8 wbdv-field wbdv-new-course">
 
                     <input id="courseManager" placeholder="New Course Title" type="text"
                            class="form-control wbdv-nudge-15px-down"/>
 
                 </div>
                 <a href="#">
-                    <i class="fas fa-plus col wbdv-color-white"
+                    <i class="fas fa-plus col wbdv-color-white wbdv-button wbdv-add-course">
                        style="position:relative; margin-right:30px; font-size:30px; top: 7px"></i>
                 </a>
                 <a href="#">
@@ -50,17 +50,17 @@
     <table class="table wbdv-color-lightgrey">
         <thead>
         <tr>
-            <th style="width:50%">Title</th>
-            <th>Owned By</th>
-            <th>Last Modified</th>
+            <th class="wbdv-header wbdv-title" style="width:50%">Title</th>
+            <th class="wbdv-header wbdv-owner">Owned By</th>
+            <th class="wbdv-header wbdv-last-modified">Last Modified</th>
             <th>
-                <a href="#">
+                <a href="#" class="wbdv-header wbdv-sort">
                     <i class="fas fa-sort float-right"></i>
                 </a>
-                <a href="#">
+                <a href="#" class="wbdv-button wbdv-grid-layout">
                     <i class="fas fa-th-large float-right" style="margin-right:65px"></i>
                 </a>
-                <a href="#">
+                <a href="#" class="wbdv-button wbdv-list-layout">
                     <i class="fas fa-list float-right" style="margin-right:15px"></i>
                 </a>
             </th>
@@ -68,16 +68,16 @@
         </thead>
 
         <tbody>
-        <tr>
+        <tr class="wbdv-row wbdv-course">
             <td>
-                <i class="far fa-file-alt"></i>
+                <i class="far fa-file-alt wbdv-row wbdv-icon"></i>
                 <a href="../course-editor/course-editor.template.client.html"
-                   style="margin-left:15px">
+                   style="margin-left:15px" class="wbdv-row wbdv-title">
                     CS4550
                 </a>
             </td>
-            <td>Jose</td>
-            <td>10:05am</td>
+            <td class="wbdv-row wbdv-owner">Jose</td>
+            <td class="wbdv-row wbdv-modified-date">10:05am</td>
             <td>
                 <!--                <i class="fas fa-spin fa-cog float-right"></i>-->
                 <a href="#">
@@ -105,7 +105,7 @@
                     <i class="fas fa-ellipsis-h float-right"></i>
                 </a>
                 <a href="#">
-                    <i class="fas fa-trash-alt float-right" style="margin-right:15px"></i>
+                    <i class="fas fa-trash-alt float-right wbdv-row wbdv-button wbdv-delete" style="margin-right:15px"></i>
                 </a>
             </td>
         </tr>

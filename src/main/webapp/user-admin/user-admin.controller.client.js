@@ -25,6 +25,11 @@
         userService.createUser(newUser)
             .then(actualInsertedUser => {
                 users.push(actualInsertedUser)
+                $("#usernameFld").val("")
+                $("#passwordFld").val("")
+                $("#firstNameFld").val("")
+                $("#lastNameFld").val("")
+                $("#roleFld").val()
                 renderUsers(users)
             })
 
@@ -71,13 +76,16 @@
         const userId = users[selectedUserIndex]._id
         userService.updateUser(userId, updatedUser)
             .then(status => {
-                console.log(status)
                 users[selectedUserIndex].username = updatedUser.username
                 users[selectedUserIndex].password = updatedUser.password
                 users[selectedUserIndex].first = updatedUser.first
                 users[selectedUserIndex].last = updatedUser.last
                 users[selectedUserIndex].role = updatedUser.role
-                console.log(users)
+                $("#usernameFld").val("")
+                $("#passwordFld").val("")
+                $("#firstNameFld").val("")
+                $("#lastNameFld").val("")
+                $("#roleFld").val()
                 renderUsers(users)
             })
 

@@ -4,13 +4,13 @@ function AdminUserServiceClient() {
     this.findUserById = findUserById;
     this.deleteUser = deleteUser;
     this.updateUser = updateUser;
-    var url = 'http://wbdv-generic-server.herokuapp.com/api/michellekang/users';
+    var url = 'http://wbdv-generic-server.herokuapp.com/api/001418910/users';
     var self = this;
 
     function createUser(user) {
-        fetch(url, {
+        return fetch(url, {
             method: "POST",
-            body: json.stringify(user),
+            body: JSON.stringify(user),
             headers: {
                 "content-type": "application/json"
             }
@@ -19,19 +19,19 @@ function AdminUserServiceClient() {
     }
 
     function findAllUsers() {
-        fetch(url)
+        return fetch(url)
             .then(response => response.json())
     }
 
     function findUserById(id) {
-        fetch(`${url}/${id}`)
+        return fetch(`${url}/${id}`)
             .then(response => response.json())
     }
 
     function updateUser(id, user) {
-        fetch(`${url}/${id}`, {
+        return fetch(`${url}/${id}`, {
             method: "PUT",
-            body: json.stringify(user),
+            body: JSON.stringify(user),
             headers: {
                 "content-type": "application/json"
             }
@@ -40,7 +40,7 @@ function AdminUserServiceClient() {
     }
 
     function deleteUser(id) {
-        fetch(`${url}/${id}`, {
+        return fetch(`${url}/${id}`, {
             method: "DELETE",
         })
             .then(response => response.json())

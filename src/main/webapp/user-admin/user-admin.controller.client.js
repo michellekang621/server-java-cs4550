@@ -32,7 +32,6 @@
     function findAllUsers() {
         userService.findAllUsers()
             .then(_users => {
-                console.log(_users)
                 users = _users
                 renderUsers(users)
             })
@@ -41,6 +40,7 @@
 //    function findUserById() {}
 
     function deleteUser(index) {
+    console.log(index)
      const user = users[index]
      const userId = user._id
      userService.deleteUser(userId)
@@ -50,30 +50,36 @@
         })
     }
 
+
     function selectUser(index) {
         selectedUserIndex = index
         $("#usernameFld").val(users[index].username)
         $("#passwordFld").val(users[index].password)
-        $("#firstnameFld").val(users[index].first)
-        $("#lastnameFld").val(users[index].last)
+        $("#firstNameFld").val(users[index].first)
+        $("#lastNameFld").val(users[index].last)
         $("#roleFld").val(users[index].role)
     }
     function updateUser() {
         const updatedUser = {
             username: $("#usernameFld").val(),
-            password: $("passwordFld").val(),
-            first: $("#firstnameFld").val(),
-            last: $("#lastnameFld").val(),
+            password: $("#passwordFld").val(),
+            first: $("#firstNameFld").val(),
+            last: $("#lastNameFld").val(),
             role: $("#roleFld").val()
         }
 
         const userId = users[selectedUserIndex]._id
         userService.updateUser(userId, updatedUser)
             .then(status => {
-                users[selectedUserIndex] = status
+                console.log(status)
+                users[selectedUserIndex].username = updatedUser.username
+                users[selectedUserIndex].password = updatedUser.password
+                users[selectedUserIndex].first = updatedUser.first
+                users[selectedUserIndex].last = updatedUser.last
+                users[selectedUserIndex].role = updatedUser.role
+                console.log(users)
                 renderUsers(users)
             })
-
 
     }
     function renderUser(user) {
@@ -84,28 +90,30 @@
         const role = user.role
 
         const $clone = $template.clone()
-        $clone.removeClass(".wbdv-hidden")
+        $clone.removeClass("wbdv-hidden")
 
         const $username = $clone.find(".wbdv-username")
         $username.html(username)
         const $password = $clone.find(".wbdv-password")
         $password.html(password)
-        const $first = $clone.find(".wbdv-first")
+        const $first = $clone.find(".wbdv-first-name")
         $first.html(first)
-        const $last = $clone.find(".wbdv-last")
+        const $last = $clone.find(".wbdv-last-name")
         $last.html(last)
         const $role = $clone.find(".wbdv-role")
         $role.html(role)
 
         $removeBtn = $clone.find(".wbdv-remove")
         $selectBtn = $clone.find(".wbdv-select")
+
+        return $clone
     }
 
     function renderUsers(users) {
         $tbody.empty()
-
-        for (i = 0; i < users.length; i++) {
-            renderUser(users[i])
+        for (let i = 0; i < users.length; i++) {
+            user = users[i]
+            clone = renderUser(user)
             $removeBtn.click(() => deleteUser(i))
             $selectBtn.click(() => selectUser(i))
             $tbody.append(clone)

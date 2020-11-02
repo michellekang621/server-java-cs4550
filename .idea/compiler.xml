@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="cs4550-f20-sever-java-michellekang" target="11" />
+      <module name="cs4550-f20-sever-java-michellekang" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

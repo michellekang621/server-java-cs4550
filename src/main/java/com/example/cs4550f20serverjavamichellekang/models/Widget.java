@@ -14,6 +14,7 @@ public class Widget {
     private String value; // Some arbitrary initial value interpreted by the widget
 
     private String topicId;
+    private String movement; // value when up or down is clicked for that widget
 
     public Widget(String id, String type, String name) {
         this.name = name;
@@ -117,6 +118,14 @@ public class Widget {
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+    public String getMovement() {
+        return movement;
+    }
+
+    public void setMovement(String movement) {
+        this.movement = movement;
     }
 
     public String getTopicId() {

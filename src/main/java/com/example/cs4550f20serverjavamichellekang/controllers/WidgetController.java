@@ -36,12 +36,15 @@ public class WidgetController {
     }
 
     @PutMapping("/api/widgets/{wid}")
-    public Integer updateWidget(String widgetId, Widget widget) {
+    public Widget updateWidget(
+            @PathVariable("wid") String widgetId,
+            @RequestBody Widget widget) {
         return service.updateWidget(widgetId, widget);
     }
 
     @DeleteMapping("/api/widgets/{wid}")
-    public Widget deleteWidget(String widgetId) {
+    public Widget deleteWidget(
+            @PathVariable("wid") String widgetId) {
         return service.deleteWidget(widgetId);
     }
 
@@ -54,6 +57,19 @@ public class WidgetController {
     public Widget findWidgetById(
             @PathVariable("wid") String widgetId) {
         return service.findWidgetById(widgetId);
+    }
+
+    @PutMapping("/api/topics/{tid}/widgets")
+    public List<Widget> moveWidget(
+            @RequestBody Widget widget,
+            @PathVariable("tid") String topicId) {
+        if (widget.getMovement().equals("up")) {
+            return service.moveWidgetUp(widget, topicId);
+        } else if (widget.getMovement().equals("down")) {
+            return service.moveWidgetDown(widget, topicId);
+        } else {
+            return null;
+        }
     }
 
 }

@@ -35,13 +35,23 @@ public class WidgetService {
     // Delete = Delete
     // Put = Update
 
+    public List<Widget> helper(String topicId) {
+        List<Widget> widgetsForTopic = new ArrayList<>();
+        for(Widget w: widgets) {
+            if (w.getTopicId().equals(topicId)) {
+                widgetsForTopic.add(w);
+            }
+        }
+        return widgetsForTopic;
+    }
+
     public Widget createWidget(String topicId, Widget widget) {
         System.out.println("WIDGET CREATING IN JAVA");
         String newId = (new Date().toString());
         widget.setId(newId);
         widget.setTopicId(topicId);
         widget.setName("NEW WIDGET");
-        widget.setWidgetOrder(widgets.size());
+        widget.setWidgetOrder(helper(topicId).size());
         widget.setSize(3);
         widgets.add(widget);
         return widget;
@@ -100,12 +110,7 @@ public class WidgetService {
         Integer originalOrder = widget.getWidgetOrder();
         Integer newOrder = originalOrder - 1;
 
-
-        for(Widget w: widgets) {
-            if (w.getTopicId().equals(topicId)) {
-                widgetsForTopic.add(w);
-            }
-        }
+        widgetsForTopic = helper(topicId);
 
         for(Widget w: widgetsForTopic) {
             if (w.getWidgetOrder().equals(originalOrder)) {
@@ -123,11 +128,7 @@ public class WidgetService {
         Integer newOrder = originalOrder + 1;
 
 
-        for(Widget w: widgets) {
-            if (w.getTopicId().equals(topicId)) {
-                widgetsForTopic.add(w);
-            }
-        }
+        widgetsForTopic = helper(topicId);
 
         for(Widget w: widgetsForTopic) {
             if (w.getWidgetOrder().equals(originalOrder)) {

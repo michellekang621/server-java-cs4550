@@ -1,8 +1,13 @@
 package com.example.cs4550f20serverjavamichellekang.models;
+import javax.persistence.*;
 
+@Entity
+@Table(name = "widgets")
 public class Widget {
-    private String name; // Optional name of the widget
-    private String id; // Widget's unique identifier
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id; // Widget's unique identifier
+    private String name; // Optional name of the widgets
     private String type; // Type of the widget, e.g., Heading, List, Paragraph, Image, YouTube, HTML, Link
     private Integer widgetOrder; // Order with respect to widgets in the same list
     private String text; // Plain text useful for heading text, paragraph text, link text, etc
@@ -16,13 +21,13 @@ public class Widget {
     private String topicId;
     private String movement; // value when up or down is clicked for that widget
 
-    public Widget(String id, String type, String name) {
+    public Widget(Integer id, String type, String name) {
         this.name = name;
         this.id = id;
         this.type = type;
     }
 
-    public Widget(String id, String type, String name, String topicId) {
+    public Widget(Integer id, String type, String name, String topicId) {
         this.name = name;
         this.id = id;
         this.type = type;
@@ -40,11 +45,11 @@ public class Widget {
         this.name = name;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

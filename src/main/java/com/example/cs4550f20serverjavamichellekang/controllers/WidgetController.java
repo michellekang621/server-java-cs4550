@@ -43,6 +43,7 @@ public class WidgetController {
             @PathVariable("wid") Integer widgetId,
             @RequestBody Widget widget) {
 //        return service.updateWidget(widgetId, widget);
+        System.out.println("UPDATing " + widgetId);
         return service.updateWidget(widgetId, widget);
     }
 

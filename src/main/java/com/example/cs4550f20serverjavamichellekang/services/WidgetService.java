@@ -79,6 +79,9 @@ public class WidgetService {
     public Widget updateWidget(Integer widgetId, Widget widget) {
         Widget w = widgetRepository.findById(widgetId).get();
         w.setName(widget.getName());
+        w.setType(widget.getType());
+        w.setSrc(widget.getSrc());
+        w.setText(widget.getText());
         return widgetRepository.save(w);
 //        for (Widget w: widgets) {
 //            if (w.getId().equals(widgetId)) {
